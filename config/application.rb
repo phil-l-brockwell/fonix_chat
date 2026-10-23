@@ -17,6 +17,8 @@ module FonixChat
 
     config.autoload_lib(ignore: %w[assets tasks])
 
+    config.time_zone = "London"
+
     config.generators.system_tests = nil
   end
 end
