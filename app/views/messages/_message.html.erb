@@ -1,0 +1,9 @@
+<%# Rendered once and broadcast to everyone, so it can't depend on the viewer.
+    The chat Stimulus controller highlights the viewer's own messages. %>
+<li id="<%= dom_id(message) %>" class="message flex flex-col items-start" data-chat-target="message" data-author-id="<%= message.user_id %>">
+  <div class="text-xs text-gray-500 px-1">
+    <span class="font-medium"><%= message.user.email_address %></span>
+    <time datetime="<%= message.created_at.iso8601 %>"><%= message.created_at.to_fs(:short) %></time>
+  </div>
+  <p class="bubble mt-1 max-w-prose rounded-2xl px-4 py-2 bg-white border border-gray-200 whitespace-pre-wrap break-words"><%= message.body %></p>
+</li>
